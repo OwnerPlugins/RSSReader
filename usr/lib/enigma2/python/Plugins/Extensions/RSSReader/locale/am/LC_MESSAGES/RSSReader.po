@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "እንኳን ደስ ያለህ! ቀድሞውንም የቅርብ ጊዜ ስሪት አለህ..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "ማሻሻያ (%s) አሁን መጫን ይፈልጋሉ?"
 
 msgid "Update"
-msgstr ""
+msgstr "አዘምን"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "ዝማኔ ተቋርጧል!"

@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "מאַזל - טאָוו! איר האָט שוין די לעצטע ווערסיע ..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "צי איר ווילן צו ינסטאַלירן דערהייַנטיקן (%s) איצט?"
 
 msgid "Update"
-msgstr ""
+msgstr "דערהייַנטיקן"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "דערהייַנטיקן אַבאָרטיד!"

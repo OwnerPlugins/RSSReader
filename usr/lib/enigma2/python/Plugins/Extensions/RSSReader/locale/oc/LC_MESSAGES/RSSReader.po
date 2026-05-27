@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Felicitacions! Avètz ja la darrièra version..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Volètz installar la mesa a jorn ( %s ) ara ?"
 
 msgid "Update"
-msgstr ""
+msgstr "Metre al jorn"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Mesa a jorn avortada!"

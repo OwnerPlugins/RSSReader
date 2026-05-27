@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Felicitats! Ja tens la darrera versió..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Voleu instal·lar l'actualització ( %s ) ara?"
 
 msgid "Update"
-msgstr ""
+msgstr "Actualització"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Actualització avortada!"

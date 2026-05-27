@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Hongera! Tayari una toleo jipya zaidi..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Je, ungependa kusakinisha sasisho ( %s ) sasa?"
 
 msgid "Update"
-msgstr ""
+msgstr "Sasisha"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Usasishaji Umeghairiwa!"

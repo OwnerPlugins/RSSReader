@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "ဂုဏ်ပြုပါသည်။ သင့်တွင် နောက်ဆုံးထွက်ဗားရှင်းရှိနေပြီဖြစ်သည်။"
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "အပ်ဒိတ် (%s) ကို ယခု ထည့်သွင်းလိုပါသလား။"
 
 msgid "Update"
-msgstr ""
+msgstr "အပ်ဒိတ်"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "အပ်ဒိတ်ကို ဖျက်သိမ်းလိုက်ပါပြီ။"

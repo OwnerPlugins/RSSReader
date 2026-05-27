@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Xin chúc mừng! Bạn đã có phiên bản mới nhất..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Bạn có muốn cài đặt bản cập nhật ( %s ) ngay bây giờ không?"
 
 msgid "Update"
-msgstr ""
+msgstr "Cập nhật"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Cập nhật bị hủy bỏ!"

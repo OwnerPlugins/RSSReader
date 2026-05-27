@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Құттықтаймыз! Сізде соңғы нұсқа әлдеқашан бар..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Жаңартуды ( %s ) қазір орнатқыңыз келе ме?"
 
 msgid "Update"
-msgstr ""
+msgstr "Жаңарту"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Жаңарту тоқтатылды!"

@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Gratulálunk! Már megvan a legújabb verzió..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Szeretné most telepíteni a frissítést ( %s )?"
 
 msgid "Update"
-msgstr ""
+msgstr "Frissítés"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Frissítés megszakítva!"

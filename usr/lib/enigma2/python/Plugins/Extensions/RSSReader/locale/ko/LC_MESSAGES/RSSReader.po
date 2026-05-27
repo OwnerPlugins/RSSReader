@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "축하해요! 이미 최신 버전이 있습니다..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "지금 업데이트( %s )를 설치하시겠습니까?"
 
 msgid "Update"
-msgstr ""
+msgstr "업데이트"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "업데이트가 중단되었습니다!"

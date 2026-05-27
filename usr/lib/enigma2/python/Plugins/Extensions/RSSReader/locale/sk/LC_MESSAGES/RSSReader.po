@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "gratulujem! Už máte najnovšiu verziu..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Chcete nainštalovať aktualizáciu ( %s) teraz?"
 
 msgid "Update"
-msgstr ""
+msgstr "Aktualizovať"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Aktualizácia prerušená!"

@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Gefeliciteerd! Je beschikt al over de nieuwste versie..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Wilt u update ( %s ) nu installeren?"
 
 msgid "Update"
 msgstr ""
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Update afgebroken!"

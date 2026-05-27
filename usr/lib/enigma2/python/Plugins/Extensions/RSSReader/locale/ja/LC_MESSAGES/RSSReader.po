@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "おめでとうございます！すでに最新バージョンをお持ちです..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "今すぐアップデート ( %s ) をインストールしますか?"
 
 msgid "Update"
-msgstr ""
+msgstr "アップデート"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "アップデートが中止されました!"

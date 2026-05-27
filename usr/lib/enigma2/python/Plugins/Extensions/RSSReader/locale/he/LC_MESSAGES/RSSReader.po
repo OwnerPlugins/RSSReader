@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "מזל טוב! כבר יש לך את הגרסה האחרונה..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "האם ברצונך להתקין עדכון ( %s ) כעת?"
 
 msgid "Update"
-msgstr ""
+msgstr "לְעַדְכֵּן"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "העדכון בוטל!"

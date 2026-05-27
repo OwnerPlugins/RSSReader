@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "urime! Ju tashmë keni versionin më të fundit..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Dëshiron të instalosh përditësimin ( %s ) tani?"
 
 msgid "Update"
-msgstr ""
+msgstr "Përditëso"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Përditësimi u ndërpre!"

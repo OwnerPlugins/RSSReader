@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Zorionak! Dagoeneko duzu azken bertsioa..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Eguneraketa ( %s ) instalatu nahi duzu orain?"
 
 msgid "Update"
-msgstr ""
+msgstr "Eguneratu"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Eguneratzea bertan behera utzi da!"

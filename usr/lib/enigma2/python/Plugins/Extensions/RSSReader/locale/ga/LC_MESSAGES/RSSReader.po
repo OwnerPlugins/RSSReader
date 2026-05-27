@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n==2 ? 1 : 2;\n"
 
 msgid "Congrats! You already have the latest version..."
-msgstr ""
+msgstr "Comhghairdeachas! Tá an leagan is déanaí agat cheana féin..."
 
 msgid "Do you want to install update ( %s ) now?"
-msgstr ""
+msgstr "Ar mhaith leat nuashonrú ( % s ) a shuiteáil anois?"
 
 msgid "Update"
-msgstr ""
+msgstr "Nuashonrú"
 
 msgid "Update Aborted!"
-msgstr ""
+msgstr "Tobscoireadh an Nuashonrú!"
