@@ -6,6 +6,7 @@
 # if you want but don't remove my copyright!
 # adapted for py3 and added fhd screens by mrvica
 # up @lululla 20240521
+# Modified by request: added WQHD support and auto-update description in ScrollLabel
 
 from Components.ActionMap import ActionMap
 from Components.config import config
@@ -84,33 +85,51 @@ def Plugins(**kwargs):
 
 
 class RSSFeedScreenList(Screen):
-    if (getDesktop(0).size().width() >= 1920):
-
-        skin = '<screen position="center,center" size="1920,1080" title="RSS Reader">\
-                    <widget name="info" position="970,45" zPosition="4" size="870,40" font="Regular;35" transparent="1" valign="center" />\
-                    <ePixmap position="188,92" size="500,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" alphatest="blend" />\
-                    <ePixmap position="0,0" size="1920,1080" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" transparent="1" alphatest="blend" />\
-                    <widget name="mylist" itemHeight="55" position="970,120" size="870,875" scrollbarMode="showOnDemand" zPosition="2" transparent="1" />\
-                    <eLabel backgroundColor="yellow" position="1542,1064" size="300,6" zPosition="10" />\
-                    <widget source="key_yellow" render="Label" position="1542,1016" size="300,45" zPosition="11" font="Regular; 30" valign="center" halign="center" backgroundColor="background" transparent="1" foregroundColor="white" />\
-                    <widget name="opisi" font="Regular; 34" position="61,742" size="773,281" zPosition="2" transparent="1" />\
-                    <widget font="Regular; 40" halign="center" position="69,30" render="Label" size="749,70" source="global.CurrentTime" transparent="1">\
-                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>\
-                    </widget>\
-                    <widget source="session.VideoPicture" render="Pig" position="77,152" zPosition="20" size="739,421" backgroundColor="transparent" transparent="0" />\
-                    <eLabel name="" position="346,652" size="190,52" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
-                </screen>'
+    # Skin definitions for different resolutions
+    if (getDesktop(0).size().width() >= 2560):
+        # WQHD (2560x1440)
+        skin = """<screen position="center,center" size="2560,1440" title="RSS Reader">
+                    <widget name="info" position="1290,50" zPosition="4" size="1160,53" font="Regular;47" transparent="1" valign="center" />
+                    <ePixmap position="250,123" size="667,11" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                    <ePixmap position="0,0" size="2560,1440" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" scale="1" transparent="1" alphatest="blend" />
+                    <widget name="mylist" itemHeight="73" position="1293,160" size="1240,1107" scrollbarMode="showOnDemand" zPosition="2" transparent="1" />
+                    <eLabel backgroundColor="yellow" position="2047,1420" size="400,8" zPosition="10" />
+                    <widget source="key_yellow" render="Label" position="2047,1360" size="400,60" zPosition="11" font="Regular; 40" valign="center" halign="center" backgroundColor="background" transparent="1" foregroundColor="white" />
+                    <widget name="opisi" font="Regular; 45" position="81,989" size="1031,375" zPosition="2" transparent="1" />
+                    <widget font="Regular; 53" halign="center" position="92,40" render="Label" size="999,93" source="global.CurrentTime" transparent="1">
+                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>
+                    </widget>
+                    <widget source="session.VideoPicture" render="Pig" position="103,203" zPosition="20" size="985,561" backgroundColor="transparent" transparent="0" />
+                    <eLabel name="" position="460,870" size="250,70" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 23" zPosition="3" text="0 FOR LANGUAGE" />
+                </screen>"""
+    elif (getDesktop(0).size().width() >= 1920):
+        # Full HD (1920x1080)
+        skin = """<screen position="center,center" size="1920,1080" title="RSS Reader">
+                    <widget name="info" position="970,45" zPosition="4" size="870,40" font="Regular;35" transparent="1" valign="center" />
+                    <ePixmap position="188,92" size="500,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                    <ePixmap position="0,0" size="1920,1080" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" scale="1" transparent="1" alphatest="blend" />
+                    <widget name="mylist" itemHeight="55" position="970,120" size="870,875" scrollbarMode="showOnDemand" zPosition="2" transparent="1" />
+                    <eLabel backgroundColor="yellow" position="1542,1064" size="300,6" zPosition="10" />
+                    <widget source="key_yellow" render="Label" position="1542,1016" size="300,45" zPosition="11" font="Regular; 30" valign="center" halign="center" backgroundColor="background" transparent="1" foregroundColor="white" />
+                    <widget name="opisi" font="Regular; 34" position="61,742" size="773,281" zPosition="2" transparent="1" />
+                    <widget font="Regular; 40" halign="center" position="69,30" render="Label" size="749,70" source="global.CurrentTime" transparent="1">
+                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>
+                    </widget>
+                    <widget source="session.VideoPicture" render="Pig" position="77,152" zPosition="20" size="739,421" backgroundColor="transparent" transparent="0" />
+                    <eLabel name="" position="346,652" size="190,52" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />
+                </screen>"""
 
     else:
-        skin = '<screen position="center,center" size="920,600" title="RSS Reader">\
-                    <widget name="info" position="15,10" zPosition="4" size="895,55" font="Regular;23" foregroundColor="#ffc000" valign="center" />\
-                    <ePixmap position="15,65" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" alphatest="blend" />\
-                    <widget name="opisi" font="Regular; 34" position="14,416" size="887,139" zPosition="2" transparent="1" />\
-                    <eLabel backgroundColor="yellow" position="389,593" size="250,6" zPosition="10" />\
-                    <widget source="key_yellow" render="Label" position="389,548" size="250,45" zPosition="11" font="Regular; 24" valign="center" halign="center" backgroundColor="background" transparent="1" foregroundColor="white" />\
-                    <widget name="mylist" itemHeight="38" position="12,79" size="890,333" scrollbarMode="showOnDemand" zPosition="2" />\
-                    <eLabel name="" position="710,556" size="190,35" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
-                </screen>'
+        # Standard HD (1280x720 or less)
+        skin = """<screen position="center,center" size="920,600" title="RSS Reader">
+                    <widget name="info" position="15,10" zPosition="4" size="895,55" font="Regular;23" foregroundColor="#ffc000" valign="center" />
+                    <ePixmap position="15,65" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" scale="1" alphatest="blend" />
+                    <widget name="opisi" font="Regular; 34" position="14,416" size="887,139" zPosition="2" transparent="1" />
+                    <eLabel backgroundColor="yellow" position="389,593" size="250,6" zPosition="10" />
+                    <widget source="key_yellow" render="Label" position="389,548" size="250,45" zPosition="11" font="Regular; 24" valign="center" halign="center" backgroundColor="background" transparent="1" foregroundColor="white" />
+                    <widget name="mylist" itemHeight="38" position="12,79" size="890,333" scrollbarMode="showOnDemand" zPosition="2" />
+                    <eLabel name="" position="710,556" size="190,35" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />
+                </screen>"""
 
     def __init__(self, session, args=0):
         self.skin = RSSFeedScreenList.skin
@@ -119,7 +138,11 @@ class RSSFeedScreenList(Screen):
         self.menu = args
         self.config = FeedreaderConfig()
         self['mylist'] = MenuList([], True, eListboxPythonMultiContent)
-        if (getDesktop(0).size().width() >= 1920):
+        # Adjust font based on screen size
+        if (getDesktop(0).size().width() >= 2560):
+            self['mylist'].l.setItemHeight(73)
+            self['mylist'].l.setFont(0, gFont('Regular', 40))
+        elif (getDesktop(0).size().width() >= 1920):
             self['mylist'].l.setItemHeight(57)
             self['mylist'].l.setFont(0, gFont('Regular', 30))
         else:
@@ -127,7 +150,7 @@ class RSSFeedScreenList(Screen):
             self['mylist'].l.setFont(0, gFont('Regular', 23))
         self['info'] = Label('RSS Feeds')
         self['key_yellow'] = Label(_('Update'))
-        self['opisi'] = Label(descplugx)
+        self['opisi'] = Label(descplugx)  # Static description in list screen
         self.Update = False
         self['actions'] = ActionMap(
             [
@@ -137,12 +160,13 @@ class RSSFeedScreenList(Screen):
                 'InputActions',
                 'InfobarEPGActions',
                 'ChannelSelectBaseActions'
+                'ColorActions'
             ],
             {
                 'ok': self.go,
                 'back': self.close,
                 'cancel': self.close,
-                'yellow': self.update_me,      # update_me,
+                'yellow': self.update_me,
                 'green': self.go,
                 '0': self.arabic,
                 'yellow_long': self.update_dev,
@@ -192,10 +216,7 @@ class RSSFeedScreenList(Screen):
         self.new_version = remote_version
         self.new_changelog = remote_changelog
         if float(__version__) < float(remote_version):
-            # if __version__ < remote_version:
             self.Update = True
-            # self['key_yellow'].show()
-            # self['key_green'].show()
             self.session.open(
                 MessageBox,
                 _('New version %s is available\n\nChangelog: %s\n\nPress info_long or yellow_long button to start force updating.') %
@@ -203,7 +224,6 @@ class RSSFeedScreenList(Screen):
                  self.new_changelog),
                 MessageBox.TYPE_INFO,
                 timeout=5)
-        # self.update_me()
 
     def update_me(self):
         if self.Update is True:
@@ -313,7 +333,34 @@ class RSSFeedScreenList(Screen):
                 except BaseException:
                     fedname = 'default'
 
-                if (getDesktop(0).size().width() >= 1920):
+                if (getDesktop(0).size().width() >= 2560):
+                    res.append(
+                        MultiContentEntryText(
+                            pos=(
+                                0,
+                                10),
+                            size=(
+                                10,
+                                20),
+                            font=0,
+                            flags=HALIGN,
+                            text='',
+                            color=0x98fb98,
+                            color_sel=0x98fb98))
+                    res.append(
+                        MultiContentEntryText(
+                            pos=(
+                                20,
+                                10),
+                            size=(
+                                1170,
+                                60),
+                            font=0,
+                            flags=HALIGN,
+                            text=feedname,
+                            color=0xffffff,
+                            color_sel=0x00fffc00))
+                elif (getDesktop(0).size().width() >= 1920):
                     res.append(
                         MultiContentEntryText(
                             pos=(
@@ -475,31 +522,50 @@ class Feed:
 
 
 class RSSFeedScreenContent(Screen):
-    if (getDesktop(0).size().width() >= 1920):
-        skin = '<screen position="0,0" size="1920,1080" title="RSS Reader">\
-                    <widget name="info" position="970,45" zPosition="4" size="870,40" font="Regular;35" transparent="1" valign="center" />\
-                    <ePixmap position="188,92" size="500,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" alphatest="blend" />\
-                    <ePixmap position="0,0" size="1920,1080" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" transparent="1" alphatest="blend" />\
-                    <widget name="mylist" itemHeight="55" position="970,120" size="870,875" scrollbarMode="showOnDemand" zPosition="2" transparent="1" />\
-                    <!-- <widget name="opisi" font="Regular; 34" position="61,742" size="773,281" zPosition="2" transparent="1" /> -->\
-                    <widget font="Regular; 40" halign="center" position="69,30" render="Label" size="749,70" source="global.CurrentTime" transparent="1">\
-                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>\
-                    </widget>\
-                    <widget source="session.VideoPicture" render="Pig" position="77,152" zPosition="20" size="739,421" backgroundColor="transparent" transparent="0" />\
-                    <eLabel name="" position="346,652" size="190,52" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
-                </screen>'
+    if (getDesktop(0).size().width() >= 2560):
+        # WQHD
+        skin = """<screen position="center,center" size="2560,1440" title="RSS Reader">
+                    <widget name="info" position="1290,50" zPosition="4" size="1160,53" font="Regular;47" transparent="1" valign="center" />
+                    <ePixmap position="250,123" size="667,11" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                    <ePixmap position="0,0" size="2560,1440" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" scale="1" transparent="1" alphatest="blend" />
+                    <widget name="mylist" itemHeight="73" position="1293,160" size="1240,1107" scrollbarMode="showOnDemand" zPosition="2" transparent="1" />
+                    <widget name="opisi" font="Regular; 45" position="81,989" size="1031,375" zPosition="2" transparent="1" />
+                    <widget font="Regular; 53" halign="center" position="92,40" render="Label" size="999,93" source="global.CurrentTime" transparent="1">
+                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>
+                    </widget>
+                    <widget source="session.VideoPicture" render="Pig" position="103,203" zPosition="20" size="985,561" backgroundColor="transparent" transparent="0" />
+                    <eLabel name="" position="460,870" size="250,70" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 23" zPosition="3" text="0 FOR LANGUAGE" />
+                </screen>
+                """
+    elif (getDesktop(0).size().width() >= 1920):
+        # Full HD
+        skin = """<screen position="center,center" size="1920,1080" title="RSS Reader">
+                    <widget name="info" position="970,45" zPosition="4" size="870,40" font="Regular;35" transparent="1" valign="center" />
+                    <ePixmap position="188,92" size="500,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                    <ePixmap position="0,0" size="1920,1080" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/RSS_FEED+1.png" scale="1" transparent="1" alphatest="blend" />
+                    <widget name="mylist" itemHeight="55" position="970,120" size="870,875" scrollbarMode="showOnDemand" zPosition="2" transparent="1" />
+                    <widget name="opisi" font="Regular; 34" position="61,742" size="773,281" zPosition="2" transparent="1" />
+                    <widget font="Regular; 40" halign="center" position="69,30" render="Label" size="749,70" source="global.CurrentTime" transparent="1">
+                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>
+                    </widget>
+                    <widget source="session.VideoPicture" render="Pig" position="77,152" zPosition="20" size="739,421" backgroundColor="transparent" transparent="0" />
+                    <eLabel name="" position="346,652" size="190,52" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />
+                </screen>
+                """
 
     else:
-        skin = '<screen position="center,center" size="920,600" title="RSS Reader">\
-                    <widget name="info" position="18,20" zPosition="4" size="557,30" font="Regular;23" foregroundColor="#ffc000" valign="center" />\
-                    <ePixmap position="15,65" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" alphatest="blend" />\
-                    <widget name="mylist" itemHeight="39" position="20,84" size="880,464" scrollbarMode="showOnDemand" zPosition="2" />\
-                    <!-- <widget name="opisi" font="Regular; 34" position="61,742" size="773,281" zPosition="2" transparent="1" /> -->\
-                    <widget font="Regular; 24" halign="center" position="646,11" render="Label" size="254,38" source="global.CurrentTime" transparent="1">\
-                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>\
-                    </widget>\
-                    <eLabel name="" position="351,561" size="190,30" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />\
-                </screen>'
+        # Standard HD
+        skin = """<screen position="center,center" size="920,600" title="RSS Reader">
+                    <widget name="info" position="18,20" zPosition="4" size="557,30" font="Regular;23" foregroundColor="#ffc000" valign="center" />
+                    <ePixmap position="15,65" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" scale="1" alphatest="blend" />
+                    <widget name="mylist" itemHeight="39" position="20,84" size="880,464" scrollbarMode="showOnDemand" zPosition="2" />
+                    <widget name="opisi" font="Regular; 34" position="14,416" size="887,139" zPosition="2" transparent="1" />
+                    <widget font="Regular; 24" halign="center" position="646,11" render="Label" size="254,38" source="global.CurrentTime" transparent="1">
+                        <convert type="ClockToText">Format:%a %d.%m. %Y | %H:%M</convert>
+                    </widget>
+                    <eLabel name="" position="351,561" size="190,30" backgroundColor="#003e4b53" halign="center" valign="center" transparent="0" font="Regular; 17" zPosition="3" text="0 FOR LANGUAGE" />
+                </screen>
+                """
 
     def __init__(self, session, args=0):
         self.feed = args
@@ -509,17 +575,38 @@ class RSSFeedScreenContent(Screen):
         self.feedname = self.feed.getName()
         self['info'] = Label()
         self['mylist'] = MenuList([], True, eListboxPythonMultiContent)
-        if (getDesktop(0).size().width() >= 1920):
+        # Adjust font based on screen size
+        if (getDesktop(0).size().width() >= 2560):
+            self['mylist'].l.setItemHeight(73)
+            self['mylist'].l.setFont(0, gFont('Regular', 40))
+        elif (getDesktop(0).size().width() >= 1920):
             self['mylist'].l.setItemHeight(57)
             self['mylist'].l.setFont(0, gFont('Regular', 30))
         else:
             self['mylist'].l.setItemHeight(38)
             self['mylist'].l.setFont(0, gFont('Regular', 23))
         self.menu = args
-        self['actions'] = ActionMap(['WizardActions', 'InputActions', 'DirectionActions'], {
-                                    'ok': self.go, '0': self.arabic, 'back': self.close}, -1)
+
+        # Replace static Label with ScrollLabel for description
+        self['opisi'] = ScrollLabel()
+
+        self.itemlist = []          # list of all items (dictionaries)
+        self.current_index = 0      # currently selected index
+
+        self['actions'] = ActionMap(
+            ['WizardActions', 'InputActions', 'DirectionActions'],
+            {
+                'ok': self.go,          # open full item viewer
+                '0': self.arabic,
+                'back': self.close,
+                'up': self.keyUp,
+                'down': self.keyDown,
+                'pageUp': self.pageUp,
+                'pageDown': self.pageDown,
+            },
+            -1
+        )
         self['info'].setText('Loading feed titles')
-        # self['opisi'].setText(descplugx)
         self.timer = eTimer()
         if os.path.exists('/var/lib/dpkg/status'):
             self.timer_conn = self.timer.timeout.connect(self.filllist)
@@ -545,7 +632,34 @@ class RSSFeedScreenContent(Screen):
             self.itemlist.append(item)
             itemnr += 1
             res = []
-            if (getDesktop(0).size().width() >= 1920):
+            if (getDesktop(0).size().width() >= 2560):
+                res.append(
+                    MultiContentEntryText(
+                        pos=(
+                            0,
+                            10),
+                        size=(
+                            10,
+                            60),
+                        font=0,
+                        flags=HALIGN,
+                        text='',
+                        color=0xffffff,
+                        color_sel=0xffffff))
+                res.append(
+                    MultiContentEntryText(
+                        pos=(
+                            10,
+                            10),
+                        size=(
+                            1170,
+                            60),
+                        font=0,
+                        flags=HALIGN,
+                        text=item['title'],
+                        color=0xffffff,
+                        color_sel=0x00fffc00))
+            elif (getDesktop(0).size().width() >= 1920):
                 res.append(
                     MultiContentEntryText(
                         pos=(
@@ -605,9 +719,53 @@ class RSSFeedScreenContent(Screen):
         self['info'].setText(self.feedname)
         if len(self.itemlist) == 0:
             self['info'].setText('sorry no feeds available')
+            self['opisi'].setText('')
         else:
             self['mylist'].l.setList(newlist)
             self['mylist'].show()
+            # Set initial selection to first item
+            self.current_index = 0
+            self['mylist'].setCurrentIndex(0)
+            self.updateDescription()
+
+            # Connect selection changed callback
+            self['mylist'].onSelectionChanged.append(self.selectionChanged)
+
+    def selectionChanged(self):
+        # Called when list selection changes
+        self.current_index = self['mylist'].getSelectedIndex()
+        if self.current_index is not None and 0 <= self.current_index < len(self.itemlist):
+            self.updateDescription()
+
+    def updateDescription(self):
+        # Update the ScrollLabel with description of current item
+        if 0 <= self.current_index < len(self.itemlist):
+            item = self.itemlist[self.current_index]
+            desc = item.get('desc', '')
+            date = item.get('date', '')
+            # Combine description and date
+            text = desc
+            if date:
+                text += '\n\n' + date
+            self['opisi'].setText(text)
+
+    def keyUp(self):
+        # Move selection up
+        self['mylist'].up()
+        # selectionChanged will be called automatically
+
+    def keyDown(self):
+        # Move selection down
+        self['mylist'].down()
+        # selectionChanged will be called automatically
+
+    def pageUp(self):
+        # Scroll description up
+        self['opisi'].pageUp()
+
+    def pageDown(self):
+        # Scroll description down
+        self['opisi'].pageDown()
 
     def getFeedContent(self, feed):
         print(('[' + myname + "] reading feedurl '%s' ..." % feed.getURL()))
@@ -631,7 +789,7 @@ class RSSFeedScreenContent(Screen):
         i = self['mylist'].getSelectedIndex()
         self.currentindex = i
         selection = self['mylist'].l.getCurrentSelection()
-        if selection is not None:
+        if selection is not None and 0 <= i < len(self.itemlist):
             item = self.itemlist[i]
             if item['type'].startswith('folder') is True:
                 newitem = Feed(item['title'], item['desc'], item['link'])
@@ -644,7 +802,7 @@ class RSSFeedScreenContent(Screen):
                 try:
                     self.session.open(
                         RSSFeedScreenItemviewer, [
-                            self.feed, item, self.currentindex, self.itemlist])
+                            self.feed, item, i, self.itemlist])
                 except AssertionError:
                     self.session.open(
                         MessageBox,
@@ -654,7 +812,7 @@ class RSSFeedScreenContent(Screen):
 
 
 class RSSFeedScreenItemviewer(Screen):
-    skin = ''
+    skin = ''  # Defined in __init__
 
     def __init__(self, session, args=0):
         self.feed = args[0]
@@ -662,25 +820,34 @@ class RSSFeedScreenItemviewer(Screen):
         self.currentindex = args[2]
         self.itemlist = args[3]
 
-        if (getDesktop(0).size().width() >= 1920):
-            self.skin = '<screen name="RSSFeedScreenItemviewer" position="center,68" size="1380,930" title="%s" flags="wfNoBorder">\
-                            <widget name="titel" position="28,24" zPosition="1" size="1318,126" font="Regular;35" foregroundColor="#ffc000" />\
-                            <widget name="leagueNumberWidget" position="27,817" size="1335,53" halign="center" font="Regular;30" transparent="1" zPosition="4" />\
-                            <ePixmap position="23,162" size="1335,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" alphatest="blend" />\
-                            <widget name="text" position="30,180" size="1319,627" halign="block" font="Regular;34" />\
-                            <ePixmap position="23,810" size="1335,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" alphatest="blend" />\
-                            <widget name="feedtitel" position="27,867" zPosition="1" size="1335,45" halign="center" font="Regular;34" foregroundColor="#ffc000" />\
-                        </screen>' % self.feed.getName()
+        if (getDesktop(0).size().width() >= 2560):
+            self.skin = """<screen name="RSSFeedScreenItemviewer" position="center,center" size="2560,1440" title="%s" flags="wfNoBorder">
+                            <widget name="titel" position="38,32" zPosition="1" size="2480,170" font="Regular;47" foregroundColor="#ffc000" />
+                            <widget name="leagueNumberWidget" position="38,1300" size="2480,70" halign="center" font="Regular;40" transparent="1" zPosition="4" />
+                            <ePixmap position="31,216" size="2498,11" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                            <widget name="text" position="40,240" size="2480,1040" halign="block" font="Regular;45" />
+                            <ePixmap position="31,1320" size="2498,11" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                            <widget name="feedtitel" position="38,1370" zPosition="1" size="2480,60" halign="center" font="Regular;45" foregroundColor="#ffc000" />
+                        </screen>""" % self.feed.getName()
+        elif (getDesktop(0).size().width() >= 1920):
+            self.skin = """<screen name="RSSFeedScreenItemviewer" position="center,center" size="1380,930" title="%s" flags="wfNoBorder">
+                            <widget name="titel" position="28,24" zPosition="1" size="1318,126" font="Regular;35" foregroundColor="#ffc000" />
+                            <widget name="leagueNumberWidget" position="27,817" size="1335,53" halign="center" font="Regular;30" transparent="1" zPosition="4" />
+                            <ePixmap position="23,162" size="1335,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                            <widget name="text" position="30,180" size="1319,627" halign="block" font="Regular;34" />
+                            <ePixmap position="23,810" size="1335,8" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider_fhd.png" scale="1" alphatest="blend" />
+                            <widget name="feedtitel" position="27,867" zPosition="1" size="1335,45" halign="center" font="Regular;34" foregroundColor="#ffc000" />
+                        </screen>""" % self.feed.getName()
 
         else:
-            self.skin = '<screen name="RSSFeedScreenItemviewer" position="center,45" size="920,620" title="%s" flags="wfNoBorder">\
-                            <widget name="titel" position="20,16" zPosition="1" size="810,84" font="Regular;23" foregroundColor="#ffc000" />\
-                            <widget name="leagueNumberWidget" position="308,542" size="300,35" halign="center" font="Regular;20" />\
-                            <ePixmap position="15,108" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" alphatest="blend" />\
-                            <widget name="text" position="20,120" size="880,418" halign="block" font="Regular;23" />\
-                            <ePixmap position="15,540" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" alphatest="blend" />\
-                            <widget name="feedtitel" position="14,577" zPosition="1" size="890,30" halign="center" font="Regular;23" foregroundColor="#ffc000" />\
-                        </screen>' % self.feed.getName()
+            self.skin = """<screen name="RSSFeedScreenItemviewer" position="center,center" size="920,620" title="%s" flags="wfNoBorder">
+                            <widget name="titel" position="20,16" zPosition="1" size="810,84" font="Regular;23" foregroundColor="#ffc000" />
+                            <widget name="leagueNumberWidget" position="308,542" size="300,35" halign="center" font="Regular;20" />
+                            <ePixmap position="15,108" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" scale="1" alphatest="blend" />
+                            <widget name="text" position="20,120" size="880,418" halign="block" font="Regular;23" />
+                            <ePixmap position="15,540" size="890,5" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/RSSReader/images/slider.png" scale="1" alphatest="blend" />
+                            <widget name="feedtitel" position="14,577" zPosition="1" size="890,30" halign="center" font="Regular;23" foregroundColor="#ffc000" />
+                        </screen>""" % self.feed.getName()
 
         Screen.__init__(self, session)
         self.itemscount = len(self.itemlist)

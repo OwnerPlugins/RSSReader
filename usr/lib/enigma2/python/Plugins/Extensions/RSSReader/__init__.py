@@ -8,7 +8,7 @@ import os
 from os import environ as os_environ
 PluginLanguageDomain = 'RSSReader'
 PluginLanguagePath = 'Extensions/RSSReader/locale'
-__version__ = "1.13"
+__version__ = "1.14"
 
 
 def paypal():

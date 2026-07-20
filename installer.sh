@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version='1.13'
-changelog='\nAdd Live Upgrade\nFix screen'
+version='1.14'
+changelog='Fix screen wqhd'
 
 TMPPATH=/tmp/RSSReader-install
 FILEPATH=/tmp/RSSReader-main.tar.gz

@@ -1,6 +1,6 @@
 <h1 align="center">📰 RSS Reader</h1>
 
-[![Version](https://img.shields.io/badge/Version-1.13-blue.svg)](https://github.com/Belfagor2005/RSSReader)
+[![Version](https://img.shields.io/badge/Version-1.14-blue.svg)](https://github.com/Belfagor2005/RSSReader)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python](https://img.shields.io/badge/Python-3.x-yellow.svg)](https://python.org)
 [![Python package](https://github.com/Belfagor2005/RSSReader/actions/workflows/pylint.yml/badge.svg)](https://github.com/Belfagor2005/RSSReader/actions/workflows/pylint.yml)
