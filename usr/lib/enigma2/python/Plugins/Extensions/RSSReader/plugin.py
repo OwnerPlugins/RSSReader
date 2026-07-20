@@ -6,7 +6,8 @@
 # if you want but don't remove my copyright!
 # adapted for py3 and added fhd screens by mrvica
 # up @lululla 20240521
-# Modified by request: added WQHD support and auto-update description in ScrollLabel
+# Modified by request: added WQHD support and auto-update description in
+# ScrollLabel
 
 from Components.ActionMap import ActionMap
 from Components.config import config
@@ -734,7 +735,8 @@ class RSSFeedScreenContent(Screen):
     def selectionChanged(self):
         # Called when list selection changes
         self.current_index = self['mylist'].getSelectedIndex()
-        if self.current_index is not None and 0 <= self.current_index < len(self.itemlist):
+        if self.current_index is not None and 0 <= self.current_index < len(
+                self.itemlist):
             self.updateDescription()
 
     def updateDescription(self):
