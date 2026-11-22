@@ -21,6 +21,10 @@
 		<url>https://corvoboys.org/app.php/feed</url>
 	</feed>
 	<feed>
+		<name>world-of-satellite</name>
+		<url>https://world-of-satellite.com/forums/-/index.rss</url>
+	</feed>
+	<feed>
 		<name>Apod Nasa Picture</name>
 		<url>https://apod.com/feed.rss</url>
 	</feed>	
